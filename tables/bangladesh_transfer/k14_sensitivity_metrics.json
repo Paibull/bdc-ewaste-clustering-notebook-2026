@@ -1,0 +1,186 @@
+{
+  "status": "SENSITIVITY_ONLY",
+  "protocol": "K=14 and mapping selected from BDC only; cached Bangladesh embeddings; no refit on Bangladesh",
+  "n_known": 710,
+  "n_unknown": 1443,
+  "reconstruction_ari": 1.0,
+  "fused_k14_mapping": {
+    "0": "battery",
+    "5": "mobile",
+    "12": "pcb",
+    "6": "input_peripheral",
+    "9": "input_peripheral"
+  },
+  "mapping_source": "semantic_nodes.csv candidate classic::kmeans_fused::k14",
+  "point_metrics": {
+    "fused_k14": {
+      "micro_top_1": 0.9070422535211268,
+      "macro_top_1": 0.903083462649945,
+      "top_2": 0.9591549295774648,
+      "mrr": 0.9463615023474179,
+      "mean_rank": 1.1380281690140845,
+      "recall_per_family": {
+        "battery": 0.8175675675675675,
+        "mobile": 0.9403973509933775,
+        "pcb": 1.0,
+        "input_peripheral": 0.8543689320388349
+      }
+    },
+    "fused_k12_frozen": {
+      "micro_top_1": 0.9084507042253521,
+      "macro_top_1": 0.9050746922901812,
+      "top_2": 0.9605633802816902,
+      "mrr": 0.9476525821596244,
+      "mean_rank": 1.1309859154929578,
+      "recall_per_family": {
+        "battery": 0.8851351351351351,
+        "mobile": 0.8807947019867549,
+        "pcb": 1.0,
+        "input_peripheral": 0.8543689320388349
+      }
+    },
+    "radio_k12_selected": {
+      "micro_top_1": 0.8802816901408451,
+      "macro_top_1": 0.866708495449735,
+      "top_2": 0.9380281690140845,
+      "mrr": 0.9296948356807511,
+      "mean_rank": 1.1830985915492958,
+      "recall_per_family": {
+        "battery": 0.6283783783783784,
+        "mobile": 0.9403973509933775,
+        "pcb": 1.0,
+        "input_peripheral": 0.8980582524271845
+      }
+    }
+  },
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 20260927,
+    "ci": {
+      "fused_k14": {
+        "micro_top_1": [
+          0.8873239436619719,
+          0.928169014084507
+        ],
+        "macro_top_1": [
+          0.8817792387320773,
+          0.925863677121473
+        ],
+        "top_2": [
+          0.9450704225352112,
+          0.9732394366197183
+        ],
+        "mrr": [
+          0.9343867370892018,
+          0.9583333333333335
+        ]
+      },
+      "fused_k12_frozen": {
+        "micro_top_1": [
+          0.8887323943661972,
+          0.928169014084507
+        ],
+        "macro_top_1": [
+          0.8834948496726972,
+          0.9263908495753839
+        ],
+        "top_2": [
+          0.9464788732394366,
+          0.9732394366197183
+        ],
+        "mrr": [
+          0.935674882629108,
+          0.9593896713615023
+        ]
+      },
+      "radio_k12_selected": {
+        "micro_top_1": [
+          0.8591549295774648,
+          0.9014436619718308
+        ],
+        "macro_top_1": [
+          0.8433190411687325,
+          0.8903851651111022
+        ],
+        "top_2": [
+          0.9211267605633803,
+          0.9535211267605633
+        ],
+        "mrr": [
+          0.9170187793427229,
+          0.942488262910798
+        ]
+      }
+    },
+    "delta_ci": {
+      "k14_minus_fused_k12_frozen": {
+        "micro_top_1": [
+          -0.012676056338028152,
+          0.011267605633802802
+        ],
+        "macro_top_1": [
+          -0.015404902004653711,
+          0.012942992661535757
+        ],
+        "top_2": [
+          -0.009859154929577563,
+          0.007042253521126751
+        ],
+        "mrr": [
+          -0.007162558685446013,
+          0.00504988262910808
+        ]
+      },
+      "k14_minus_radio_k12_selected": {
+        "micro_top_1": [
+          0.009859154929577452,
+          0.04507042253521132
+        ],
+        "macro_top_1": [
+          0.01715627503427679,
+          0.05731695164833071
+        ],
+        "top_2": [
+          0.004225352112676051,
+          0.03943661971830992
+        ],
+        "mrr": [
+          0.005751173708920307,
+          0.027937206572769973
+        ]
+      }
+    }
+  },
+  "novelty_unknown_positive": {
+    "fused_k14": {
+      "nearest_known_family_distance": {
+        "auroc": 0.9270904707524427,
+        "average_precision": 0.9484141605256909
+      },
+      "negative_known_family_margin": {
+        "auroc": 0.8734473368276185,
+        "average_precision": 0.888073827969534
+      }
+    },
+    "fused_k12_frozen": {
+      "nearest_known_family_distance": {
+        "auroc": 0.9048636935960881,
+        "average_precision": 0.934181253524853
+      },
+      "negative_known_family_margin": {
+        "auroc": 0.8476335490419998,
+        "average_precision": 0.8738423698653591
+      }
+    },
+    "radio_k12_selected": {
+      "nearest_known_family_distance": {
+        "auroc": 0.9196860999677902,
+        "average_precision": 0.9429597176842999
+      },
+      "negative_known_family_margin": {
+        "auroc": 0.8937161430119177,
+        "average_precision": 0.9133033719474838
+      }
+    }
+  }
+}

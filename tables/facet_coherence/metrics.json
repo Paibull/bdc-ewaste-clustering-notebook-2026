@@ -1,0 +1,63 @@
+{
+  "material": {
+    "partial_r2": 0.033880431388772725,
+    "null_mean": 0.002993496490411549,
+    "null_q025": 0.0019900292536554286,
+    "null_q975": 0.004250526457282571,
+    "p_upper": 0.001,
+    "holdout_profile_correlation": 0.6817972042979313,
+    "gate": true
+  },
+  "condition": {
+    "partial_r2": 0.24339480256361035,
+    "null_mean": 0.003872233763720732,
+    "null_q025": 0.0012423015811512783,
+    "null_q975": 0.008055781006645538,
+    "p_upper": 0.001,
+    "holdout_profile_correlation": 0.9691645605289955,
+    "gate": true
+  },
+  "joint": {
+    "partial_r2": 0.0555651774473882,
+    "null_mean": 0.003047529239225566,
+    "null_q025": 0.002056181085854625,
+    "null_q975": 0.0042770856084578136,
+    "p_upper": 0.001,
+    "holdout_profile_correlation": 0.7874958010232039,
+    "gate": true
+  },
+  "substantive_edges": 12,
+  "substantive_holdout_sign_agreement": 1.0,
+  "facet_interpretation_gate": true,
+  "posthoc_discovery_fit_sensitivity": {
+    "status": "posthoc_sensitivity_not_primary_gate",
+    "fit_rows": 3579,
+    "predicted_holdout_rows": 600,
+    "ari_to_transductive_discovery": 0.9634871005115084,
+    "ari_to_transductive_holdout": 0.9738309267370799,
+    "material": {
+      "partial_r2": 0.0328044151170257,
+      "null_mean": 0.0030362526955125787,
+      "null_q025": 0.0019533050604027603,
+      "null_q975": 0.004367197299935765,
+      "p_upper": 0.001,
+      "holdout_profile_correlation": 0.668195010099123
+    },
+    "condition": {
+      "partial_r2": 0.23993323950154444,
+      "null_mean": 0.0037762791185195974,
+      "null_q025": 0.0010510304732290032,
+      "null_q975": 0.008313432357797378,
+      "p_upper": 0.001,
+      "holdout_profile_correlation": 0.9685134891619905
+    },
+    "joint": {
+      "partial_r2": 0.054242256984444626,
+      "null_mean": 0.0031132082785279257,
+      "null_q025": 0.0020943284238985117,
+      "null_q975": 0.004333288763764959,
+      "p_upper": 0.001,
+      "holdout_profile_correlation": 0.7753585441225255
+    }
+  }
+}

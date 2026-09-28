@@ -1,0 +1,324 @@
+{
+  "state": "complete",
+  "verdict": "FUSION_IMPROVES_TRANSFER",
+  "reconstruction": {
+    "fused": {
+      "ari": 1.0,
+      "n_discovery": 3579,
+      "cluster_id_alignment_reconstructed_to_frozen": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "11": 11
+      },
+      "frozen_mapping": {
+        "1": "battery",
+        "5": "mobile",
+        "8": "pcb",
+        "0": "input_peripheral",
+        "7": "input_peripheral"
+      },
+      "holdout_transformed_rows": 600,
+      "reconstruction_pass": true
+    },
+    "radio": {
+      "ari": 1.0,
+      "n_discovery": 3579,
+      "cluster_id_alignment_reconstructed_to_frozen": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "11": 11
+      },
+      "frozen_mapping": {
+        "4": "battery",
+        "3": "mobile",
+        "10": "pcb",
+        "2": "input_peripheral",
+        "11": "input_peripheral"
+      },
+      "holdout_transformed_rows": 600,
+      "reconstruction_pass": true
+    }
+  },
+  "external_counts": {
+    "total_annotated_unique": 2153,
+    "known": 710,
+    "out_of_taxonomy": 1443,
+    "excluded_without_annotation": 4
+  },
+  "primary_known_set": {
+    "n": 710,
+    "families": [
+      "battery",
+      "mobile",
+      "pcb",
+      "input_peripheral"
+    ],
+    "chance_macro_top_1": 0.25,
+    "top_2_definition": "Top-2 among the four frozen families: battery, mobile, pcb, input_peripheral",
+    "bootstrap": {
+      "draws": 2000,
+      "seed": 20260927,
+      "method": "paired, stratified by true family; same resampled keys for fused and RADIO"
+    },
+    "estimators": {
+      "fused": {
+        "micro_top_1": 0.9084507042253521,
+        "macro_top_1": 0.9050746922901812,
+        "top_2": 0.9605633802816902,
+        "mrr": 0.9476525821596244,
+        "mean_rank": 1.1309859154929578,
+        "recall_per_family": {
+          "battery": 0.8851351351351351,
+          "mobile": 0.8807947019867549,
+          "pcb": 1.0,
+          "input_peripheral": 0.8543689320388349
+        },
+        "bootstrap_95_ci": {
+          "micro_top_1": [
+            0.8887323943661972,
+            0.928169014084507
+          ],
+          "macro_top_1": [
+            0.8834948496726972,
+            0.9263908495753839
+          ],
+          "top_2": [
+            0.9464788732394366,
+            0.9732394366197183
+          ],
+          "mrr": [
+            0.935674882629108,
+            0.9593896713615023
+          ],
+          "mean_rank": [
+            1.1,
+            1.1633802816901408
+          ],
+          "recall_per_family": {
+            "battery": [
+              0.831081081081081,
+              0.9324324324324325
+            ],
+            "mobile": [
+              0.8278145695364238,
+              0.9271523178807947
+            ],
+            "pcb": [
+              1.0,
+              1.0
+            ],
+            "input_peripheral": [
+              0.8058252427184466,
+              0.8981796116504848
+            ]
+          }
+        }
+      },
+      "radio": {
+        "micro_top_1": 0.8802816901408451,
+        "macro_top_1": 0.866708495449735,
+        "top_2": 0.9380281690140845,
+        "mrr": 0.9296948356807511,
+        "mean_rank": 1.1830985915492958,
+        "recall_per_family": {
+          "battery": 0.6283783783783784,
+          "mobile": 0.9403973509933775,
+          "pcb": 1.0,
+          "input_peripheral": 0.8980582524271845
+        },
+        "bootstrap_95_ci": {
+          "micro_top_1": [
+            0.8591549295774648,
+            0.9014436619718308
+          ],
+          "macro_top_1": [
+            0.8433190411687325,
+            0.8903851651111022
+          ],
+          "top_2": [
+            0.9211267605633803,
+            0.9535211267605633
+          ],
+          "mrr": [
+            0.9170187793427229,
+            0.942488262910798
+          ],
+          "mean_rank": [
+            1.1492957746478873,
+            1.2183098591549295
+          ],
+          "recall_per_family": {
+            "battery": [
+              0.5472972972972973,
+              0.7027027027027027
+            ],
+            "mobile": [
+              0.9006622516556292,
+              0.9735099337748344
+            ],
+            "pcb": [
+              1.0,
+              1.0
+            ],
+            "input_peripheral": [
+              0.8591019417475728,
+              0.9368932038834952
+            ]
+          }
+        }
+      }
+    },
+    "paired_deltas_fused_minus_radio": {
+      "micro_top_1": {
+        "point": 0.028169014084507005,
+        "bootstrap_95_ci": [
+          0.009859154929577452,
+          0.04929577464788726
+        ]
+      },
+      "macro_top_1": {
+        "point": 0.038366196840446176,
+        "bootstrap_95_ci": [
+          0.01716235711455687,
+          0.06188060528862938
+        ]
+      },
+      "mrr": {
+        "point": 0.017957746478873382,
+        "bootstrap_95_ci": [
+          0.007042253521126749,
+          0.02981220657277006
+        ]
+      }
+    },
+    "verdict_rule": "FUSION_IMPROVES_TRANSFER if paired macro Top-1 delta lower CI > 0; else TRANSFER_SUPPORTED_NO_FUSION_GAIN if fused macro Top-1 lower CI > 0.25; else NOT_SUPPORTED"
+  },
+  "out_of_taxonomy_novelty": {
+    "positive_class": "unknown (out-of-taxonomy)",
+    "signals": {
+      "fused": {
+        "nearest_known_family_distance": {
+          "auroc_unknown_positive": 0.9048636935960881,
+          "average_precision_unknown_positive": 0.934181253524853,
+          "unknown_prevalence_ap_chance": 0.6702275894101254,
+          "score_direction": "larger values indicate out-of-taxonomy"
+        },
+        "negative_known_family_margin": {
+          "auroc_unknown_positive": 0.8476335490419998,
+          "average_precision_unknown_positive": 0.8738423698653591,
+          "unknown_prevalence_ap_chance": 0.6702275894101254,
+          "score_direction": "larger values indicate out-of-taxonomy"
+        }
+      },
+      "radio": {
+        "nearest_known_family_distance": {
+          "auroc_unknown_positive": 0.9196860999677902,
+          "average_precision_unknown_positive": 0.9429597176842999,
+          "unknown_prevalence_ap_chance": 0.6702275894101254,
+          "score_direction": "larger values indicate out-of-taxonomy"
+        },
+        "negative_known_family_margin": {
+          "auroc_unknown_positive": 0.8937161430119177,
+          "average_precision_unknown_positive": 0.9133033719474838,
+          "unknown_prevalence_ap_chance": 0.6702275894101254,
+          "score_direction": "larger values indicate out-of-taxonomy"
+        }
+      }
+    },
+    "threshold_tuning": false
+  },
+  "mapping_frozen": {
+    "fused": {
+      "1": "battery",
+      "5": "mobile",
+      "8": "pcb",
+      "0": "input_peripheral",
+      "7": "input_peripheral"
+    },
+    "radio": {
+      "4": "battery",
+      "3": "mobile",
+      "10": "pcb",
+      "2": "input_peripheral",
+      "11": "input_peripheral"
+    }
+  },
+  "mapping_changed_after_scoring": false,
+  "embedding_metadata": {
+    "state": "complete",
+    "app": "bdc-bangladesh-frozen-transfer-20260927",
+    "volume": "bdc-data",
+    "dataset_path": "/data/externals/bangladesh_ewaste_v1/extracted",
+    "annotated_images": 2153,
+    "known": 710,
+    "out_of_taxonomy": 1443,
+    "without_annotation": 4,
+    "harmonization": "reuse penyisihan/modal-train/harmonize.py: center crop square, resize 150x150 LANCZOS, JPEG q75 4:2:0, RGB",
+    "embedding": "frozen model features, per-row L2 normalized, stored float16",
+    "backbones": {
+      "dinov3": {
+        "model": "vit_large_patch16_dinov3.lvd1689m",
+        "input_size": 224,
+        "embedding_dim": 1024
+      },
+      "radio": {
+        "model": "HF:nvidia/C-RADIOv4-SO400M",
+        "input_size": 224,
+        "embedding_dim": 2304
+      },
+      "aimv2": {
+        "model": "aimv2_large_patch14_224.apple_pt",
+        "input_size": 224,
+        "embedding_dim": 1024
+      },
+      "siglip2": {
+        "model": "OC:timm/ViT-SO400M-16-SigLIP2-384",
+        "input_size": 384,
+        "embedding_dim": 1152
+      },
+      "dinov2": {
+        "model": "vit_large_patch14_reg4_dinov2.lvd142m",
+        "input_size": 224,
+        "embedding_dim": 1024
+      },
+      "siglip": {
+        "model": "vit_so400m_patch14_siglip_384",
+        "input_size": 378,
+        "embedding_dim": 1152
+      },
+      "convnext": {
+        "model": "convnextv2_large.fcmae_ft_in22k_in1k",
+        "input_size": 224,
+        "embedding_dim": 1536
+      },
+      "eva02": {
+        "model": "eva02_large_patch14_448.mim_m38m_ft_in22k_in1k",
+        "input_size": 448,
+        "embedding_dim": 1024
+      }
+    },
+    "gpu": "NVIDIA A10",
+    "torch": "2.5.0+cu124",
+    "torchvision": "0.20.0",
+    "timm": "1.0.29",
+    "runtime_seconds": 302.63
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "source": "semifinal\\results\\k_stability_100\\assignments.npz",
+  "selection": "Frozen medoid assignments only; no clustering or embedding rerun.",
+  "k_tradeoff": [
+    {
+      "k": 4,
+      "coarse_silhouette": 0.1632088422775268,
+      "coverage_adjusted": 0.2193877551020407,
+      "source_nmi": 0.0917706038794013,
+      "coarse_stability_ari": 0.9995441315919708
+    },
+    {
+      "k": 6,
+      "coarse_silhouette": 0.1948756128549575,
+      "coverage_adjusted": 0.2687074829931972,
+      "source_nmi": 0.084869949106691,
+      "coarse_stability_ari": 0.5459593951527122
+    },
+    {
+      "k": 8,
+      "coarse_silhouette": 0.2335696667432785,
+      "coverage_adjusted": 0.3290816326530612,
+      "source_nmi": 0.085792554462436,
+      "coarse_stability_ari": 0.7353727127934246
+    },
+    {
+      "k": 10,
+      "coarse_silhouette": 0.2739118337631225,
+      "coverage_adjusted": 0.3734693877551019,
+      "source_nmi": 0.1335398344679266,
+      "coarse_stability_ari": 0.8814215918132233
+    },
+    {
+      "k": 12,
+      "coarse_silhouette": 0.3047722280025482,
+      "coverage_adjusted": 0.3554421768707483,
+      "source_nmi": 0.1599727044951604,
+      "coarse_stability_ari": 0.9995841832099616
+    },
+    {
+      "k": 14,
+      "coarse_silhouette": 0.3122454583644867,
+      "coverage_adjusted": 0.2507288629737609,
+      "source_nmi": 0.1584388117637999,
+      "coarse_stability_ari": 0.9949426770764443
+    },
+    {
+      "k": 16,
+      "coarse_silhouette": 0.3211464583873749,
+      "coverage_adjusted": 0.2576530612244898,
+      "source_nmi": 0.1668288279510726,
+      "coarse_stability_ari": 0.9943103505316956
+    },
+    {
+      "k": 18,
+      "coarse_silhouette": 0.3085303008556366,
+      "coverage_adjusted": 0.2222222222222221,
+      "source_nmi": 0.1672435459844985,
+      "coarse_stability_ari": 0.8956429492270178
+    },
+    {
+      "k": 20,
+      "coarse_silhouette": 0.292899340391159,
+      "coverage_adjusted": 0.196938775510204,
+      "source_nmi": 0.1724792353925348,
+      "coarse_stability_ari": 0.8973772712606803
+    },
+    {
+      "k": 22,
+      "coarse_silhouette": 0.2544331550598144,
+      "coverage_adjusted": 0.1558441558441558,
+      "source_nmi": 0.1771166080507768,
+      "coarse_stability_ari": 0.8729453878531919
+    },
+    {
+      "k": 24,
+      "coarse_silhouette": 0.2572385668754577,
+      "coverage_adjusted": 0.1318027210884354,
+      "source_nmi": 0.167337463771269,
+      "coarse_stability_ari": 0.899569054909037
+    }
+  ],
+  "chooseR_refinement": [
+    {
+      "k": 12,
+      "chooseR_consensus_silhouette": 0.9974150061607361,
+      "clusters_above_chooseR_threshold": 7,
+      "chooseR_winner": true
+    },
+    {
+      "k": 13,
+      "chooseR_consensus_silhouette": 0.9954804182052612,
+      "clusters_above_chooseR_threshold": 5,
+      "chooseR_winner": false
+    },
+    {
+      "k": 14,
+      "chooseR_consensus_silhouette": 0.9880126714706421,
+      "clusters_above_chooseR_threshold": 0,
+      "chooseR_winner": false
+    },
+    {
+      "k": 15,
+      "chooseR_consensus_silhouette": 0.994648277759552,
+      "clusters_above_chooseR_threshold": 5,
+      "chooseR_winner": false
+    },
+    {
+      "k": 16,
+      "chooseR_consensus_silhouette": 0.9910048246383667,
+      "clusters_above_chooseR_threshold": 2,
+      "chooseR_winner": false
+    }
+  ],
+  "case_a": {
+    "case": "stable_refinement_K12_to_K16",
+    "interpretation": "Stable semantic refinement within a K=12 parent; descriptive, not ground-truth taxonomy.",
+    "rows": [
+      {
+        "parent_k": 12,
+        "parent_cluster": 3,
+        "parent_semantic": "laptop",
+        "child_k": 16,
+        "child_cluster": 3,
+        "child_semantic": "desktop",
+        "parent_members_in_child": 118,
+        "child_size": 130,
+        "parent_containment": 0.36419753086419754,
+        "child_purity_to_parent": 0.9076923076923077,
+        "child_jaccard_q2_5": 0.9375630252100841,
+        "child_jaccard_median": 0.9807692307692307,
+        "child_fraction_jaccard_below_0_60": 0.0,
+        "child_stability_status": "stable",
+        "parent_web_share": 0.12654320987654322,
+        "child_web_share": 0.3,
+        "parent_150x150_share": 0.12654320987654322,
+        "child_150x150_share": 0.3,
+        "web_share_delta_child_minus_parent": 0.17345679012345677,
+        "verdict": "PERSISTENT_ONLY",
+        "source_control": "web/field proportions measured; not adjusted within-source",
+        "verdict_reason": "Stable assignments and post-hoc descriptors; unequal web/field composition and missing visual inspection prevent semantic validation."
+      },
+      {
+        "parent_k": 12,
+        "parent_cluster": 3,
+        "parent_semantic": "laptop",
+        "child_k": 16,
+        "child_cluster": 10,
+        "child_semantic": "laptop",
+        "parent_members_in_child": 203,
+        "child_size": 213,
+        "parent_containment": 0.6265432098765432,
+        "child_purity_to_parent": 0.9530516431924883,
+        "child_jaccard_q2_5": 0.9448275862068966,
+        "child_jaccard_median": 0.9882352941176471,
+        "child_fraction_jaccard_below_0_60": 0.0,
+        "child_stability_status": "stable",
+        "parent_web_share": 0.12654320987654322,
+        "child_web_share": 0.03286384976525822,
+        "parent_150x150_share": 0.12654320987654322,
+        "child_150x150_share": 0.03286384976525822,
+        "web_share_delta_child_minus_parent": -0.093679360111285,
+        "verdict": "PERSISTENT_ONLY",
+        "source_control": "web/field proportions measured; not adjusted within-source",
+        "verdict_reason": "Stable assignments and post-hoc descriptors; unequal web/field composition and missing visual inspection prevent semantic validation."
+      }
+    ]
+  },
+  "case_b": {
+    "case": "unstable_display_split_at_K14",
+    "interpretation": "Display partition is sensitive to resampling at K=14; use as a limit case, not evidence of a stable subtype.",
+    "rows": [
+      {
+        "parent_k": 12,
+        "parent_cluster": 10,
+        "parent_semantic": "display",
+        "child_k": 14,
+        "child_cluster": 13,
+        "child_semantic": "display",
+        "parent_members_in_child": 136,
+        "child_size": 139,
+        "parent_containment": 0.47719298245614034,
+        "child_purity_to_parent": 0.9784172661870504,
+        "child_jaccard_q2_5": 0.004514186131833191,
+        "child_jaccard_median": 0.9669421487603306,
+        "child_fraction_jaccard_below_0_60": 0.41,
+        "child_stability_status": "mixed",
+        "parent_web_share": 0.8315789473684211,
+        "child_web_share": 0.8273381294964028,
+        "parent_150x150_share": 0.8315789473684211,
+        "child_150x150_share": 0.8273381294964028,
+        "web_share_delta_child_minus_parent": -0.004240817872018243,
+        "verdict": "UNSTABLE",
+        "source_control": "web/field proportions measured; not adjusted within-source",
+        "verdict_reason": "K=14 display membership is resampling-sensitive: 40–41% of subsamples have Jaccard below 0.60."
+      },
+      {
+        "parent_k": 12,
+        "parent_cluster": 10,
+        "parent_semantic": "display",
+        "child_k": 14,
+        "child_cluster": 8,
+        "child_semantic": "display",
+        "parent_members_in_child": 146,
+        "child_size": 149,
+        "parent_containment": 0.512280701754386,
+        "child_purity_to_parent": 0.9798657718120806,
+        "child_jaccard_q2_5": 0.5033450704225352,
+        "child_jaccard_median": 0.975609756097561,
+        "child_fraction_jaccard_below_0_60": 0.4,
+        "child_stability_status": "mixed",
+        "parent_web_share": 0.8315789473684211,
+        "child_web_share": 0.8120805369127517,
+        "parent_150x150_share": 0.8315789473684211,
+        "child_150x150_share": 0.8120805369127517,
+        "web_share_delta_child_minus_parent": -0.019498410455669357,
+        "verdict": "UNSTABLE",
+        "source_control": "web/field proportions measured; not adjusted within-source",
+        "verdict_reason": "K=14 display membership is resampling-sensitive: 40–41% of subsamples have Jaccard below 0.60."
+      }
+    ]
+  },
+  "metadata_join": {
+    "key_type": "exact discovery key",
+    "matched_rows": 3579,
+    "source_table": "results/dms46_full/fraction_table.csv"
+  },
+  "limits": [
+    "Semantic names are frozen post-hoc descriptors.",
+    "Stability is resampling consistency, not semantic truth.",
+    "Source proportions are descriptive; no within-source adjustment or visual validation was performed."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "n_paired": 1018,
+  "old_n": 1018,
+  "old_n_excluded_from_roi": 0,
+  "excluded_primary_keys": [],
+  "old_variant": "postmask_highres",
+  "old_source": "predictions_scored.csv",
+  "macro_auroc_roi": 0.7317428046211276,
+  "macro_auroc_rembg": 0.7394105813243323,
+  "paired_delta_macro_auroc_roi_minus_rembg": -0.007667776703204732,
+  "paired_delta_macro_auroc_bootstrap_95_ci": [
+    -0.01546255301389771,
+    0.0003697306734917765
+  ],
+  "macro_average_precision_roi": 0.5012209091672964,
+  "macro_average_precision_rembg": 0.528214660783264,
+  "paired_delta_macro_average_precision_roi_minus_rembg": -0.02699375161596751,
+  "paired_delta_macro_average_precision_bootstrap_95_ci": [
+    -0.04671549276251938,
+    -0.004153490511185704
+  ],
+  "bootstrap_draws": 2000,
+  "seed": 20260927,
+  "same_keys_verified": true
+}

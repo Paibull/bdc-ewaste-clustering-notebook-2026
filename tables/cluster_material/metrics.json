@@ -1,0 +1,36 @@
+{
+  "partition": "labels__kmeans_fused",
+  "n_joined": 4179,
+  "n_clusters": 12,
+  "materials": [
+    "plastic",
+    "metal",
+    "glass",
+    "rubber",
+    "paper_cardboard",
+    "other_unknown"
+  ],
+  "global_mean_fraction": {
+    "plastic": 0.33028272204290077,
+    "metal": 0.06160220341582055,
+    "glass": 0.09961631660961749,
+    "rubber": 0.003991680008212276,
+    "paper_cardboard": 0.09794425234011551,
+    "other_unknown": 0.4065628259055313
+  },
+  "six_fraction_max_abs_sum_error": 8.299999998406804e-08,
+  "discovery_material_r2": {
+    "n": 3579,
+    "transform": "sqrt(material fractions), row-wise L2 normalized",
+    "between_cluster_r2": 0.1373926629435615,
+    "permutation": {
+      "draws": 999,
+      "seed": 20260927,
+      "stratification": "permutation of fused cluster labels within source (web/field)",
+      "p_value": 0.001,
+      "null_mean": 0.006037272704076188,
+      "null_95_quantile": 0.007516479266131893
+    }
+  },
+  "js_distance": "SciPy Jensen-Shannon distance (base 2) on each cluster's mean six-material composition"
+}

@@ -1,0 +1,23 @@
+{
+  "phase": "final",
+  "candidate_rows": 485,
+  "selected_arms": 34,
+  "families": {
+    "amf": 52,
+    "classic": 167,
+    "existing": 19,
+    "fgw": 26,
+    "mcsf": 13,
+    "mge": 26,
+    "tac": 78,
+    "temi": 78,
+    "turtle": 26
+  },
+  "elapsed_evaluation_seconds": 740.7569906999997,
+  "decision": "MULTI_RESOLUTION_ATLAS_SUPPORTED",
+  "refinement_requests": null,
+  "max_over_k_finalists_permutations": 199,
+  "max_over_k_pvalues_refreshed": 34,
+  "elapsed_null_refresh_seconds": 7.016295599998557,
+  "selected_arms_missing_seed_stability": 3
+}
