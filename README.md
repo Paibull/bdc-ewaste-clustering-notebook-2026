@@ -17,11 +17,8 @@
 
 | Sumber | Jumlah | Rincian |
 |---|---:|---|
-| Data internal | 4.179 citra | 3.979 citra *train* berlabel *Electronic* dan 200 citra *test* yang masuk berdasarkan prediksi model sebagai *Electronic*. |
-| *Discovery* dan *holdout* internal | 3.579 dan 600 citra | *Discovery* dipakai untuk membentuk *cluster*. *Holdout* dipakai untuk evaluasi material. |
-| Asal citra internal | 2.815 dan 1.364 citra | 2.815 citra hasil *web scraping* berukuran 150 × 150 piksel; 1.364 citra beresolusi tinggi dari foto lapangan. |
+| Data internal BDC| 4.179 citra | 3.979 citra *train* berlabel *Electronic* dan 200 citra *test* yang masuk berdasarkan prediksi model sebagai *Electronic*. |
 | Bangladesh (*external*) | 2.157 berkas | Dataset [*Custom Bangladeshi E-Waste Image Dataset for Object Detection and Recognition*](https://doi.org/10.17632/77383kmdnw.1) oleh Afrin dan Azmi (2025). Sebanyak 2.153 berkas memiliki anotasi. Dari jumlah itu, 710 citra masuk ke empat kelompok perangkat yang dapat dipetakan, yaitu baterai, PCB, ponsel, serta *keyboard* dan *mouse*; 1.443 citra lain berada di luar empat kelompok tersebut. Empat berkas tanpa anotasi tidak digunakan. Lisensi CC BY 4.0. |
-| Evaluasi material Bangladesh | 1.018 citra | Subset untuk evaluasi prediksi material DMS46. |
 
 Repositori ini menyertakan hasil tersimpan dan notebook analisis. Citra mentah, seluruh *embedding*, dan bobot model tidak disertakan.
 
