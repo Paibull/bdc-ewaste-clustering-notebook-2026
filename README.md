@@ -1,6 +1,25 @@
 # BDC e-waste research
 
+## Tim
+
+| No. | Nama | Peran |
+|---:|---|---|
+| 1 | ARYA PRATAMA RHAMA PUTRA | Anggota |
+| 2 | FAIZ AKBAR HIZBULLAH | Anggota |
+| 3 | RADITYA AKMAL | Anggota |
+|  | Aldinata Rizky Revanda | Pembimbing |
+
+## Pipeline
+
+![Pipeline penelitian](figures/pipeline.png)
+
+## Struktur repository
+
+```text
 .
+├── figures/
+│   ├── pipeline.png — pratinjau pipeline
+│   └── pipeline.svg — file vector pipeline
 ├── notebooks/
 │   └── 01_hasil_penelitian.ipynb — ringkasan hasil dan visualisasi
 ├── results/
@@ -15,14 +34,16 @@
 │   ├── cluster_material_profiles.csv — profil material per cluster
 │   ├── external_material_metrics.json — ringkasan DMS46 external
 │   └── external_material_by_class.csv — metrik DMS46 per material
-├── src/bdc/
-│   ├── __init__.py — antarmuka package
-│   ├── config.py — konfigurasi backbone dan parameter utama
-│   ├── preprocessing.py — penyeragaman ukuran dan JPEG
-│   ├── embeddings.py — ekstraksi frozen embedding
-│   ├── clustering.py — fusion, PCA, dan K-Means
-│   ├── material.py — inferensi DMS46 dan profil material
-│   ├── evaluation.py — metrik stabilitas, transfer, dan material
-│   └── visualization.py — visualisasi hasil
+├── src/
+│   └── bdc/
+│       ├── __init__.py — antarmuka package
+│       ├── config.py — konfigurasi backbone dan parameter utama
+│       ├── preprocessing.py — penyeragaman ukuran dan JPEG
+│       ├── embeddings.py — ekstraksi frozen embedding
+│       ├── clustering.py — fusion, PCA, dan K-Means
+│       ├── material.py — inferensi DMS46 dan profil material
+│       ├── evaluation.py — metrik stabilitas, transfer, dan material
+│       └── visualization.py — visualisasi hasil
 ├── requirements.txt — dependensi notebook dan model
 └── .gitignore — file sementara Python dan notebook
+```
