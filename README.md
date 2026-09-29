@@ -58,7 +58,7 @@ Profil menunjukkan prediksi enam kelas visual, yaitu kaca, logam, kertas/karton,
 | Hubungan kelompok dan material internal | Pada *holdout* 600 citra, profil material memberi tambahan R² sebesar 0,1145 (95% CI 0,0889–0,1409; p=0,001) terhadap baseline sumber dan akuisisi. Ini bukan akurasi piksel atau ukuran komposisi kimia. [Evaluasi material](results/material_holdout.csv) |
 | Prediksi material DMS46 eksternal | Pada 1.018 citra berlabel, *macro AUROC* 0,732 (95% CI 0,710–0,752) dan *macro AP* 0,501 (95% CI 0,470–0,539). Evaluasi ini parsial karena tidak tersedia *ground truth* material per piksel. [Ringkasan](results/external_material_metrics.json) |
 
-Catatan: metrik transfer dan *holdout* material memakai partisi Fusion-L2 K12. Partisi itu memiliki ARI 0,9748 terhadap *medoid* Fusion K12 yang dipilih pada evaluasi stabilitas, sehingga hasil tersebut tidak menguji partisi *medoid* secara persis.
+Catatan: metrik transfer dan *holdout* material memakai partisi Fusion-L2 K12. Partisi tersebut memiliki ARI 0,9748 terhadap *medoid* Fusion K12 yang dipilih pada evaluasi stabilitas, sehingga hasil tersebut tidak menguji partisi *medoid* secara persis.
 
 ## Struktur repository
 
