@@ -20,7 +20,6 @@
 | Data internal BDC| 4.179 citra | 3.979 citra *train* berlabel *Electronic* dan 200 citra *test* yang masuk berdasarkan prediksi model sebagai *Electronic*. |
 | Bangladesh (*external*) | 2.157 berkas | Dataset [*Custom Bangladeshi E-Waste Image Dataset for Object Detection and Recognition*](https://doi.org/10.17632/77383kmdnw.1) oleh Afrin dan Azmi (2025). Sebanyak 2.153 berkas memiliki anotasi. Dari jumlah itu, 710 citra masuk ke empat kelompok perangkat yang dapat dipetakan, yaitu baterai, PCB, ponsel, serta *keyboard* dan *mouse*; 1.443 citra lain berada di luar empat kelompok tersebut. Empat berkas tanpa anotasi tidak digunakan. Lisensi CC BY 4.0. |
 
-Repositori ini menyertakan hasil tersimpan dan notebook analisis. Citra mentah, seluruh *embedding*, dan bobot model tidak disertakan.
 
 ## Hasil *clustering*
 
