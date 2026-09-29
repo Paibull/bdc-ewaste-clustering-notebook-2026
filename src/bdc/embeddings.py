@@ -2,19 +2,31 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image
+from sklearn.base import BaseEstimator, TransformerMixin
 
 from .config import ACTIVE_MODEL, BACKBONES, MODEL_PRESETS
 from .preprocessing import harmonize
 
 
-class FrozenEmbeddingExtractor:
-    def __init__(self, device=None):
-        import torch
+class FrozenEmbeddingExtractor(BaseEstimator, TransformerMixin):
+    def __init__(self, device=None, preset=ACTIVE_MODEL, batch_size=16):
+        self.device = device
+        self.preset = preset
+        self.batch_size = batch_size
+        self.torch = None
+        self._device = None
 
-        self.torch = torch
-        self.device = torch.device(
-            device or ("cuda" if torch.cuda.is_available() else "cpu")
+    def fit(self, paths, y=None):
+        return self
+
+    def transform(self, paths):
+        self.features_ = self.extract_selected(
+            paths, preset=self.preset, batch_size=self.batch_size
         )
+        return self.features_
+
+    def fit_transform(self, paths, y=None, **fit_params):
+        return self.transform(paths)
 
     def _load(self, name):
         import timm
@@ -27,7 +39,7 @@ class FrozenEmbeddingExtractor:
 
             model = AutoModel.from_pretrained(
                 item["model"], trust_remote_code=True
-            ).to(self.device).eval()
+            ).to(self._device).eval()
             transform = transforms.Compose([
                 transforms.Resize(
                     (item["size"], item["size"]),
@@ -42,13 +54,13 @@ class FrozenEmbeddingExtractor:
             model, transform = open_clip.create_model_from_pretrained(
                 f"hf-hub:{item['model']}"
             )
-            model = model.to(self.device).eval()
+            model = model.to(self._device).eval()
             forward = lambda current, batch: current.encode_image(batch)
         else:
             options = {"dynamic_img_size": True} if item["model"].startswith("vit") else {}
             model = timm.create_model(
                 item["model"], pretrained=True, num_classes=0, **options
-            ).to(self.device).eval()
+            ).to(self._device).eval()
             config = resolve_model_data_config(model)
             config["input_size"] = (3, item["size"], item["size"])
             config["crop_pct"] = 1.0
@@ -57,6 +69,13 @@ class FrozenEmbeddingExtractor:
         return model, transform, forward
 
     def extract(self, paths, name, batch_size=64):
+        if self.torch is None:
+            import torch
+
+            self.torch = torch
+            self._device = torch.device(
+                self.device or ("cuda" if torch.cuda.is_available() else "cpu")
+            )
         torch = self.torch
         model, transform, forward = self._load(name)
         paths = [Path(path) for path in paths]
@@ -67,16 +86,16 @@ class FrozenEmbeddingExtractor:
                 with Image.open(path) as image:
                     image = harmonize(image.convert("RGB"))
                     batch.append(transform(image))
-            batch = torch.stack(batch).to(self.device)
+            batch = torch.stack(batch).to(self._device)
             with torch.inference_mode(), torch.autocast(
-                device_type=self.device.type,
-                enabled=self.device.type == "cuda",
+                device_type=self._device.type,
+                enabled=self._device.type == "cuda",
             ):
                 features = forward(model, batch).float()
             features = torch.nn.functional.normalize(features, dim=1)
             output.append(features.cpu().numpy())
         del model
-        if self.device.type == "cuda":
+        if self._device.type == "cuda":
             torch.cuda.empty_cache()
         return np.concatenate(output).astype(np.float16)
 

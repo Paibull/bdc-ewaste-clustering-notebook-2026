@@ -71,6 +71,7 @@ Catatan: metrik transfer dan *holdout* material memakai partisi Fusion-L2 K12. P
 │   ├── clusters.png — sebaran cluster dan contoh citra
 │   └── material_profiles.png — contoh citra dan profil material DMS46
 ├── notebooks/
+│   ├── 00_pipeline_klastering.ipynb — pipeline clustering pada folder citra pilihan
 │   └── 01_hasil_penelitian.ipynb — ringkasan hasil dan visualisasi
 ├── results/
 │   ├── acquisition.csv — hasil penanganan ukuran dan JPEG

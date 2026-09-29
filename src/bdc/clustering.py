@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.base import BaseEstimator, ClusterMixin
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 
@@ -11,7 +12,7 @@ def l2(values):
     return values / np.maximum(norms, 1e-12)
 
 
-class FusedKMeans:
+class FusedKMeans(ClusterMixin, BaseEstimator):
     def __init__(
         self,
         k=K,
@@ -36,8 +37,9 @@ class FusedKMeans:
         for name in MODEL_PRESETS[self.preset]:
             values = l2(views[name])
             if fit:
+                components = min(self.view_dim, min(values.shape) - 1)
                 self.view_pca[name] = PCA(
-                    n_components=self.view_dim,
+                    n_components=components,
                     svd_solver="randomized",
                     whiten=False,
                     random_state=0,
@@ -50,10 +52,11 @@ class FusedKMeans:
             blocks.append(block.astype(np.float32, copy=False))
         return l2(np.concatenate(blocks, axis=1))
 
-    def fit(self, views):
+    def fit(self, views, y=None):
         joined = self._join(views, fit=True)
+        components = min(self.fusion_dim, min(joined.shape) - 1)
         self.fusion_pca = PCA(
-            n_components=self.fusion_dim,
+            n_components=components,
             svd_solver="randomized",
             whiten=False,
             random_state=0,
@@ -62,7 +65,11 @@ class FusedKMeans:
         self.model = KMeans(
             n_clusters=self.k, n_init=20, random_state=self.seed
         ).fit(space)
+        self.labels_ = self.model.labels_
         return self
+
+    def fit_predict(self, views, y=None):
+        return self.fit(views, y).labels_
 
     def transform(self, views):
         joined = self._join(views)
