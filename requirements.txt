@@ -1,0 +1,12 @@
+numpy
+pandas
+Pillow
+scikit-learn
+scipy
+plotly
+torch
+torchvision
+timm
+transformers
+open-clip-torch
+ipykernel

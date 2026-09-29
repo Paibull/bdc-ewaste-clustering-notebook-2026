@@ -1,0 +1,226 @@
+{
+  "experiment": "bangladesh_dms46_roi_material_validation",
+  "verdict": "PARTIAL",
+  "primary_metric": "macro one-vs-rest AUROC on material fractions inside union YOLO ROI",
+  "n_primary": 1018,
+  "support": {
+    "glass": 127,
+    "metal": 293,
+    "paper_cardboard": 200,
+    "plastic": 398
+  },
+  "macro_auroc": 0.7317428046211276,
+  "macro_auroc_bootstrap_95_ci": [
+    0.7097156233459053,
+    0.7521483259224176
+  ],
+  "macro_average_precision": 0.5012209091672964,
+  "macro_average_precision_bootstrap_95_ci": [
+    0.47025985308771057,
+    0.5392705998226369
+  ],
+  "macro_ap_lift": 2.239188680606739,
+  "permutation": {
+    "draws": 999,
+    "seed": 20260927,
+    "p_value": 0.001,
+    "null_macro_auroc_95_quantile": 0.5182084163849916
+  },
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 20260927,
+    "method": "stratified paired image bootstrap"
+  },
+  "per_material": [
+    {
+      "material": "glass",
+      "support": 127,
+      "prevalence_ap_chance": 0.12475442043222004,
+      "auroc": 0.7804112869729668,
+      "average_precision": 0.39074884285665373,
+      "ap_lift": 3.1321442679375866,
+      "median_positive_score": 0.13461342309261526,
+      "median_negative_score": 0.0,
+      "target_detection_rate_ge_0_01": 0.6771653543307087,
+      "target_detection_rate_ge_0_05": 0.6062992125984252,
+      "target_detection_rate_ge_0_10": 0.5354330708661418,
+      "auroc_bootstrap_95_ci": [
+        0.7355428740599345,
+        0.8234249759184141
+      ],
+      "average_precision_bootstrap_95_ci": [
+        0.31855247818119364,
+        0.48047442885560454
+      ]
+    },
+    {
+      "material": "metal",
+      "support": 293,
+      "prevalence_ap_chance": 0.28781925343811393,
+      "auroc": 0.6827798046369308,
+      "average_precision": 0.5427997958349045,
+      "ap_lift": 1.8859050926960164,
+      "median_positive_score": 0.0031064916966670538,
+      "median_negative_score": 0.0,
+      "target_detection_rate_ge_0_01": 0.45733788395904434,
+      "target_detection_rate_ge_0_05": 0.37542662116040953,
+      "target_detection_rate_ge_0_10": 0.3174061433447099,
+      "auroc_bootstrap_95_ci": [
+        0.6476906555254796,
+        0.71764210897964
+      ],
+      "average_precision_bootstrap_95_ci": [
+        0.49674588432834377,
+        0.5925923064524183
+      ]
+    },
+    {
+      "material": "paper_cardboard",
+      "support": 200,
+      "prevalence_ap_chance": 0.19646365422396855,
+      "auroc": 0.7572677261613693,
+      "average_precision": 0.47328462032161434,
+      "ap_lift": 2.409018717437017,
+      "median_positive_score": 0.3699238184389253,
+      "median_negative_score": 0.009150630970758276,
+      "target_detection_rate_ge_0_01": 0.815,
+      "target_detection_rate_ge_0_05": 0.775,
+      "target_detection_rate_ge_0_10": 0.735,
+      "auroc_bootstrap_95_ci": [
+        0.716838172371638,
+        0.7956560207823962
+      ],
+      "average_precision_bootstrap_95_ci": [
+        0.41596396509822414,
+        0.5392250578857044
+      ]
+    },
+    {
+      "material": "plastic",
+      "support": 398,
+      "prevalence_ap_chance": 0.39096267190569745,
+      "auroc": 0.7065124007132437,
+      "average_precision": 0.5980503776560133,
+      "ap_lift": 1.5296866443563355,
+      "median_positive_score": 0.30471467040645894,
+      "median_negative_score": 0.07805141938353617,
+      "target_detection_rate_ge_0_01": 0.907035175879397,
+      "target_detection_rate_ge_0_05": 0.8391959798994975,
+      "target_detection_rate_ge_0_10": 0.7738693467336684,
+      "auroc_bootstrap_95_ci": [
+        0.6735592275895608,
+        0.7380406062570918
+      ],
+      "average_precision_bootstrap_95_ci": [
+        0.5575596625098947,
+        0.645513872032651
+      ]
+    }
+  ],
+  "secondary_argmax_metrics": {
+    "argmax_macro_f1": 0.4895629337494243,
+    "argmax_balanced_accuracy": 0.5005759637185146,
+    "argmax_accuracy": 0.5196463654223968,
+    "top_2_accuracy": 0.7220039292730844,
+    "mean_reciprocal_rank": 0.703912901113294,
+    "top_2_definition": "true material among the top two of four candidates: glass, metal, paper_cardboard, plastic; secondary only",
+    "mean_reciprocal_rank_definition": "rank of true material among the same four candidates; secondary only",
+    "argmax_definition": "argmax over the four mapped material fractions; secondary only"
+  },
+  "target_material_detection": {
+    "definition": "fraction of positive images whose target material occupies at least the fixed fraction of YOLO ROI",
+    "thresholds": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "per_material": {
+      "glass": {
+        "target_detection_rate_ge_0_01": 0.6771653543307087,
+        "target_detection_rate_ge_0_05": 0.6062992125984252,
+        "target_detection_rate_ge_0_10": 0.5354330708661418
+      },
+      "metal": {
+        "target_detection_rate_ge_0_01": 0.45733788395904434,
+        "target_detection_rate_ge_0_05": 0.37542662116040953,
+        "target_detection_rate_ge_0_10": 0.3174061433447099
+      },
+      "paper_cardboard": {
+        "target_detection_rate_ge_0_01": 0.815,
+        "target_detection_rate_ge_0_05": 0.775,
+        "target_detection_rate_ge_0_10": 0.735
+      },
+      "plastic": {
+        "target_detection_rate_ge_0_01": 0.907035175879397,
+        "target_detection_rate_ge_0_05": 0.8391959798994975,
+        "target_detection_rate_ge_0_10": 0.7738693467336684
+      }
+    },
+    "macro_rates": {
+      "target_detection_rate_ge_0_01": 0.7141346035422875,
+      "target_detection_rate_ge_0_05": 0.6489804534145831,
+      "target_detection_rate_ge_0_10": 0.59042714023613
+    },
+    "overall_rates": {
+      "target_detection_rate_ge_0_01": 0.730844793713163,
+      "target_detection_rate_ge_0_05": 0.6640471512770137,
+      "target_detection_rate_ge_0_10": 0.6051080550098232
+    },
+    "note": "descriptive positive-label detection rate; Bangladesh has no exhaustive pixel-level material labels"
+  },
+  "all_images": 2153,
+  "class_counts": {
+    "Battery Waste": 148,
+    "Glass Waste": 127,
+    "Keyboard": 126,
+    "Light Bulb": 43,
+    "Medical Waste": 282,
+    "Metal Waste": 293,
+    "Mobile": 151,
+    "Mouse": 80,
+    "Organic Waste": 100,
+    "Paper Waste": 200,
+    "PCB": 205,
+    "Plastic Waste": 398
+  },
+  "sum_of_six_fraction_max_abs_error": 1.1102230246251565e-16,
+  "silent_full_image_fallback": false,
+  "primary_key_coverage": {
+    "locked_primary_keys": 1018,
+    "scored_roi_valid_keys": 1018,
+    "excluded_keys": [],
+    "excluded_reason_details": []
+  },
+  "inference": {
+    "gpu": "NVIDIA A10",
+    "runtime_seconds": 122.29,
+    "batch_size": 1,
+    "batch_microcheck_identical": false,
+    "nonempty_annotation_images": 2153,
+    "valid_annotated_images": 2153,
+    "inferred_valid_annotated_images": 2153,
+    "total_image_files": 2157,
+    "class_counts": {
+      "Battery Waste": 148,
+      "Glass Waste": 127,
+      "Keyboard": 126,
+      "Light Bulb": 43,
+      "Medical Waste": 282,
+      "Metal Waste": 293,
+      "Mobile": 151,
+      "Mouse": 80,
+      "Organic Waste": 100,
+      "Paper Waste": 200,
+      "PCB": 205,
+      "Plastic Waste": 398
+    },
+    "exclusions": {
+      "empty_annotation": 4
+    },
+    "invalid_bbox_count": 0,
+    "empty_bbox_count": 0,
+    "total_bbox_count": 2159,
+    "mean_bbox_area_fraction": 0.19664657741605102,
+    "polygon_annotations_converted_to_enclosing_bbox": 1407
+  }
+}
