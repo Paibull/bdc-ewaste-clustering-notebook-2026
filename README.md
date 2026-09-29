@@ -24,18 +24,17 @@
 ## Hasil *clustering*
 
 ![Sebaran cluster dan contoh citra](figures/clusters.png)
-
-Sebaran K=12 ditampilkan sebagai proyeksi 2D untuk visualisasi. Citra di sisi kanan adalah contoh terdekat ke *centroid* pada ruang *embedding* 100-D. Nama kelompok merangkum pola citra, bukan label acuan.
+Hasil cluster dengan K=12 ditampilkan sebagai proyeksi 2D untuk visualisasi. Citra di sisi kanan adalah contoh terdekat ke *centroid* pada ruang *embedding* 100-D. Nama kelompok merangkum object dominan pada citra, bukan label acuan.
 
 ## Profil material DMS46
 
 ![Contoh citra dan profil material DMS46](figures/material_profiles.png)
 
-Profil menunjukkan prediksi enam kelas visual, yaitu kaca, logam, kertas/karton, plastik, karet, dan lainnya. Nilainya menggambarkan area yang tampak pada citra, bukan komposisi kimia seluruh perangkat.
+Profil menunjukkan prediksi enam kelas visual, yaitu kaca, logam, kertas/karton, plastik, karet, dan lainnya. Nilainya menggambarkan area yang tampak pada citra.
 
 ## Model dan sumber
 
-Delapan *backbone* digunakan untuk menghasilkan *frozen embedding*. DMS46 digunakan terpisah untuk segmentasi material.
+8 *backbone* digunakan untuk menghasilkan *frozen embedding*. DMS46 digunakan terpisah untuk _profiling_ material.
 
 | Model | Pengembang | Paper | Kode atau bobot resmi |
 |---|---|---|---|
