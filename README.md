@@ -18,7 +18,7 @@
 ```text
 .
 ├── figures/
-│   ├── pipeline.png — pratinjau pipeline
+│   ├── pipeline.png — preview pipeline
 │   └── pipeline.svg — file vector pipeline
 ├── notebooks/
 │   └── 01_hasil_penelitian.ipynb — ringkasan hasil dan visualisasi
@@ -36,14 +36,14 @@
 │   └── external_material_by_class.csv — metrik DMS46 per material
 ├── src/
 │   └── bdc/
-│       ├── __init__.py — antarmuka package
-│       ├── config.py — konfigurasi backbone dan parameter utama
-│       ├── preprocessing.py — penyeragaman ukuran dan JPEG
-│       ├── embeddings.py — ekstraksi frozen embedding
+│       ├── __init__.py
+│       ├── config.py — konfigurasi backbone dan parameter
+│       ├── preprocessing.py — preprocessing ukuran dan JPEG
+│       ├── embeddings.py — embedding
 │       ├── clustering.py — fusion, PCA, dan K-Means
-│       ├── material.py — inferensi DMS46 dan profil material
+│       ├── material.py — inference DMS46 dan profil material
 │       ├── evaluation.py — metrik stabilitas, transfer, dan material
 │       └── visualization.py — visualisasi hasil
-├── requirements.txt — dependensi notebook dan model
-└── .gitignore — file sementara Python dan notebook
+├── requirements.txt — dependensi
+└── .gitignore
 ```
