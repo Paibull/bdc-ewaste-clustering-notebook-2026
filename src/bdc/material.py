@@ -101,7 +101,7 @@ class MaterialAnalyzer:
     def profile(self, prediction, roi=None):
         values = prediction if roi is None else prediction[roi]
         groups = self.groups[values]
-        fractions = np.bincount(groups, minlength=len(MATERIALS)).astype(float)
+        fractions = np.bincount(groups.ravel(), minlength=len(MATERIALS)).astype(float)
         fractions /= fractions.sum()
         return dict(zip(MATERIALS, fractions.tolist()))
 

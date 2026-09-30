@@ -8,5 +8,6 @@ torch
 torchvision
 timm
 transformers
+einops
 open-clip-torch
 ipykernel
